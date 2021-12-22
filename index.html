@@ -1,0 +1,43 @@
+<HTML>
+
+<HEAD>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>利用規約</title>
+    <style>
+        body {
+            line-height: 1.4;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+            font-size: 16px;
+            padding: 12px;
+        }
+
+        ul>li {
+            line-height: 1.8;
+        }
+
+        h1, h2, h3 {
+            margin-top: 48px;
+            color: #333333;
+        }
+    </style>
+</HEAD>
+
+<BODY>
+    <article id="terms" />
+
+    <script>
+        fetch('https://app-sample.microcms.io/api/v1/terms',
+            { headers: { "X-MICROCMS-API-KEY": "e7ad76351c0847bca247409c1a65dec22a47" } })
+            .then((res) => {
+                return res.json();
+            })
+            .then((json) => {
+                document.getElementById("terms").innerHTML = json.body;
+            })
+            .catch((reason) => {
+                console.log(reason);
+            });
+    </script>
+</BODY>
+
+</HTML>
